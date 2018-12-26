@@ -1,0 +1,53 @@
+header a {
+    margin:10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+header hr {
+    margin-bottom: 0;
+}
+
+.homepage-navbar ul {
+    margin: 0;
+}
+
+.homepage-navbar li {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 120px 0 20px;
+}
+
+
+.homepage-navbar a {
+    background-color: black;
+    color: white;
+    padding: 5px 50px 10px 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.login-container {
+    float: right;
+    margin-right: 16px;
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container #login, #register{
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+}
