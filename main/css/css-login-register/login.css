@@ -54,9 +54,11 @@
     to {transform: scale(1)}
 }
 
-form {
-    /*border: 3px solid #f1f1f1;*/
-}
+/*form {*/
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    /*!*border: 3px solid #f1f1f1;*!*/
+/*}*/
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
