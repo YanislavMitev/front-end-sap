@@ -4,8 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <title>Liquid Flavour</title>
+
     <link rel="stylesheet" type="text/css" href="../css/css-index.css">
+    <link rel="stylesheet" type="text/css" href="../css/css-login-register/login.css">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <link rel="script" type="text/javascript" href="../scripts/login.js">
 </head>
 <body>
@@ -13,7 +17,7 @@
         <a style="color: antiquewhite;">LiquidFlavour</a>
         <div class="login-container">
             <form>
-                <button id="login" type="button" onclick="displayModal()">Login</button>
+                <button id="login" type="button" onclick="openLogin()">Login</button>
                 <button id="register" type="button">Register</button>
             </form>
         </div>
@@ -30,10 +34,32 @@
         </nav>
 
         <section>
-            <iframe src="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" height="500em" width="100%" id="frame" name="frame"></iframe>
+            <iframe style="display: none" src="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" height="500em" width="100%" id="frame" name="frame"></iframe>
         </section>
+
+        <div class="login-form" id="login-form">
+            <form method="post">
+                <label><p>Account</p>
+                    <input type="text" name="Account">
+                </label>
+
+                <label><p>Password</p>
+                    <input type="password" name="Password">
+                </label>
+                <button type="submit">Login</button>
+                <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
+            </form>
+        </div>
+
     </main>
 <script>
+    function openLogin() {
+        document.getElementById("login-form").style.display = "block";
+    }
+
+    function closeLogin() {
+        document.getElementById("login-form").style.display = "none";
+    }
 
 </script>
 </body>
