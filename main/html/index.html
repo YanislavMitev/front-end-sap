@@ -14,46 +14,27 @@
 </head>
 <body>
     <header>
-        <div class="login-container">
-            <form>
-                <button id="login" type="button" onclick="openLogin()">Login</button>
-                <button id="register" type="button">Register</button>
-            </form>
-        </div>
-    </header>
-    <main>
         <nav class="homepage-navbar">
             <ul style="list-style-type: none;">
                 <li><a href="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" target="frame" >LiquidFlavour</a></li>
                 <li><a href="https://www.youtube.com/embed/gylxuO6dKOw?autoplay=1" target="frame">Products</a></li>
                 <li><a href="https://www.youtube.com/embed/h7jh0iALRPM?autoplay=1" target="frame">About</a></li>
                 <li><a href="https://www.youtube.com/embed/qc98u-eGzlc?autoplay=1" target="frame" >Location</a></li>
+                <li><div class="login-container">
+                    <form>
+                        <button id="login" type="button" onclick="openLogin()">Login</button>
+                        <button id="register" type="button">Register</button>
+                    </form>
+                </div></li>
             </ul>
         </nav>
+    </header>
+    <main>
+
 
         <section>
             <iframe style="display: none" src="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" height="500em" width="100%" id="frame" name="frame"></iframe>
         </section>
-
-        <!--<div class="login-form" id="login-form">-->
-            <!--<form method="post">-->
-                <!--<label><p>Account</p>-->
-                    <!--<input type="text" name="Account">-->
-                <!--</label>-->
-
-                <!--<label><p>Password</p>-->
-                    <!--<input type="password" name="Password">-->
-                <!--</label>-->
-                <!--<span>-->
-                    <!--<button type="submit">Login</button>-->
-                <!--</span>-->
-                <!--<span>-->
-                    <!--<button type="button" class="btn cancel" onclick="closeLogin()">Close</button>-->
-                <!--</span>-->
-            <!--</form>-->
-        <!--</div>-->
-
-        <!--<button onclick="document.getElementById('id01').style.display='block'">Login</button>-->
 
         <!-- The Modal -->
         <div id="login-form" class="modal">
