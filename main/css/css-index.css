@@ -4,7 +4,6 @@ body {
 }
 
 header a {
-    margin:10px;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
 }
@@ -18,10 +17,12 @@ button:hover{
 }
 
 .homepage-navbar ul {
+    list-style-type: none;
+    padding:0;
     margin: 0;
     display:flex;
     justify-content: space-between;
-    width:90%;
+    width:100%;
 }
 
 .homepage-navbar li {
@@ -41,6 +42,9 @@ button:hover{
 }
 
 .login-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
     float: right;
     margin-right: 16px;
     color: white;
