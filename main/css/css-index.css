@@ -21,21 +21,23 @@ button:hover{
     margin: 0;
     display:flex;
     justify-content: space-between;
+    width:90%;
 }
 
 .homepage-navbar li {
     margin: 0;
-    padding: 0 120px 0 20px;
+    padding: 0 0px 0 0px;
 }
 
 .homepage-navbar a {
-    background-color: #ffe6ff;
-    color: black;
-
+    background-color: Transparent;
+    color: #ffccff;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
-
+    display: block;
+    padding: 10px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .login-container {
