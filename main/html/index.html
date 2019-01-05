@@ -35,17 +35,46 @@
             <iframe style="display: none" src="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" height="500em" width="100%" id="frame" name="frame"></iframe>
         </section>
 
-        <div class="login-form" id="login-form">
-            <form method="post">
-                <label><p>Account</p>
-                    <input type="text" name="Account">
-                </label>
+        <!--<div class="login-form" id="login-form">-->
+            <!--<form method="post">-->
+                <!--<label><p>Account</p>-->
+                    <!--<input type="text" name="Account">-->
+                <!--</label>-->
 
-                <label><p>Password</p>
-                    <input type="password" name="Password">
-                </label>
-                <button type="submit">Login</button>
-                <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
+                <!--<label><p>Password</p>-->
+                    <!--<input type="password" name="Password">-->
+                <!--</label>-->
+                <!--<span>-->
+                    <!--<button type="submit">Login</button>-->
+                <!--</span>-->
+                <!--<span>-->
+                    <!--<button type="button" class="btn cancel" onclick="closeLogin()">Close</button>-->
+                <!--</span>-->
+            <!--</form>-->
+        <!--</div>-->
+
+        <!--<button onclick="document.getElementById('id01').style.display='block'">Login</button>-->
+
+        <!-- The Modal -->
+        <div id="login-form" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'"
+                class="close" title="Close Modal">&times;</span>
+
+            <!-- Modal Content -->
+            <form class="modal-content animate" action="index.html">
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>
+                </div>
             </form>
         </div>
 
