@@ -1,3 +1,8 @@
+body {
+    background-color: #171717;
+    margin:10px 0 0 0;
+}
+
 header a {
     margin:10px;
     font-family: "Roboto", sans-serif;
@@ -8,22 +13,24 @@ header hr {
     margin-bottom: 0;
 }
 
+button:hover{
+    opacity: 0.8;
+}
+
 .homepage-navbar ul {
     margin: 0;
+    display:flex;
+    justify-content: space-between;
 }
 
 .homepage-navbar li {
-    display: inline-flex;
-    justify-content: space-between;
     margin: 0;
     padding: 0 120px 0 20px;
 }
 
-
 .homepage-navbar a {
     background-color: black;
     color: white;
-    padding: 5px 50px 10px 50px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
