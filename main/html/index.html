@@ -10,7 +10,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <link rel="script" type="text/javascript" href="../scripts/login.js">
+    <script src="../../services/LoginService.js"></script>
+    <script src="../../services/RegisterService.js"></script>
+
 </head>
 <body>
 <header>
@@ -32,50 +34,49 @@
 <main>
 
     <section>
-        <iframe style="border: none;" src="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" height="500em" width="100%" id="frame" name="frame"></iframe>
+        <iframe style="border: none;" src="https://www.youtube.com/embed/hc9VXLtgw5g?autoplay=1" height="500em"
+                width="100%" id="frame" name="frame"></iframe>
     </section>
 
-    <!-- The Modal -->
+    <!-- Login -->
     <div id="login-form" class="modal">
         <span onclick="closeLogin()" class="close" title="Close Modal">&times;</span>
 
-        <!-- Login -->
         <form class="modal-content animate" action="index.html" method="post">
-            <div class="container">
+            <div class="cancel-button-container">
                 <label for="uname"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="uname" required>
+                <input id="email-login" type="text" placeholder="Enter Email" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input id="password-login" type="password" placeholder="Enter Password" name="psw" required>
 
-                <button type="submit">Login</button>
+                <button type="submit" onclick="authenticate()">Login</button>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
+            <div class="cancel-button-container" style="background-color:#f1f1f1">
                 <button type="button" onclick="closeLogin()" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
     <!-- Register-->
     <div id="register-form" class="modal">
-            <span onclick="closeRegister()"
-                  class="close" title="Close Modal">&times;</span>
+        <span onclick="closeRegister()" class="close" title="Close Modal">&times;</span>
 
-        <form class="modal-content animate" action="index.html" method="post">
-            <div class="container">
+        <form class="modal-content animate" action="index.html" method="post" >
+            <div class="cancel-button-container">
                 <h1>Register</h1>
 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input id="email-register" type="text" placeholder="Enter Email" name="email" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input id="password-register" type="password" placeholder="Enter Password" name="psw" required>
 
                 <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                <input id="repassword-register" type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
                 <div class="clearfix">
-                    <button type="submit" class="signup">Register</button>
+                    <button type="submit" class="signup" onclick="register()">Register</button>
                     <button type="button" onclick="closeRegister()" class="cancelbtn">Cancel</button>
                 </div>
             </div>
@@ -84,6 +85,7 @@
 
 </main>
 <script>
+
     function openLogin() {
         document.getElementById("login-form").style.display = "block";
     }
@@ -100,6 +102,17 @@
         document.getElementById("register-form").style.display = "none";
     }
 
+    let loginModal = document.getElementById('login-form');
+    let registerModal = document.getElementById('register-form');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target === loginModal) {
+            closeLogin();
+        } else if (event.target === registerModal){
+            closeRegister();
+        }
+    };
 </script>
 </body>
 </html>
