@@ -13,25 +13,15 @@
 
     <script src="../../services/LoginService.js"></script>
     <script src="../../services/RegisterService.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
 <body>
+
 <header>
-    <nav class="homepage-navbar">
-        <ul>
-            <li><a href="index.html">LiquidFlavour</a></li>
-            <li><a href="./pages/products.html" >Products</a></li>
-            <li><a href="./pages/about.html" >About</a></li>
-            <li><a href="./pages/location.html">Location</a></li>
-            <li>
-                <div class="login-container">
-                    <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
-                    <button id="register" type="button" onclick="openPopup('register-form')">Register</button>
-                </div>
-            </li>
-        </ul>
-    </nav>
+    <div id="nav-placeholder"></div>
 </header>
+
 <main>
     <div class="bestsellers" style=" background: rgba(255, 255, 255, 0.1); padding:10px">
         <h2>HIGH-QUALITY EJUICE AND VAPE JUICE</h2>
@@ -73,7 +63,6 @@
 
     <!-- Login -->
     <div id="login-form" class="modal" onclick="outsideModalClick(id)">
-        <span onclick="closePopup('login-form')" class="close" title="Close Modal">&times;</span>
 
         <form class="modal-content animate" action="index.html" method="post">
             <div class="cancel-button-container">
@@ -93,7 +82,6 @@
     </div>
     <!-- Register-->
     <div id="register-form" class="modal" onclick="outsideModalClick(id)" >
-        <span onclick="closePopup('register-form')" class="close" title="Close Modal">&times;</span>
 
         <form class="modal-content animate" action="index.html" method="post">
             <div class="cancel-button-container">
@@ -119,9 +107,6 @@
 
     <div id="myModal" class="modal" onclick="outsideModalClick(id)">
 
-        <!-- The Close Button -->
-        <span class="close" onclick="closePopup('myModal')">&times;</span>
-
         <!-- Modal Content (The Image) -->
         <img class="modal-content" id="modalImg">
 
@@ -131,6 +116,10 @@
 
 </main>
 <script>
+
+    $(function(){
+        $("#nav-placeholder").load("nav-bar.html");
+    });
 
     function openPopup(id) {
         document.getElementById(id).style.display = "block";
