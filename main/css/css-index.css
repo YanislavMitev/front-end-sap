@@ -22,10 +22,7 @@ button:hover{
     margin: 0;
     display:flex;
     justify-content: space-between;
-<<<<<<< HEAD
-=======
     width:100%;
->>>>>>> 0ee0f8022fa6b120b0cbd31319072416adc3a4c8
 }
 
 .homepage-navbar li {
