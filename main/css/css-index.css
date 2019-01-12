@@ -16,6 +16,8 @@ header hr {
     margin-bottom: 0;
 }
 
+row-all
+
 button:hover{
     opacity: 0.8;
 }
@@ -42,7 +44,7 @@ button:hover{
 
 .homepage-navbar a {
     background-color: Transparent;
-    color: #c891ff;
+    color: #e4baff;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;

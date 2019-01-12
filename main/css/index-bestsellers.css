@@ -96,3 +96,15 @@
         width: 100%;
     }
 }
+.bestsellers h2{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #e4baff;
+}
+.bestsellers p {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #e4baff;
+}
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #e4baff;
+}
