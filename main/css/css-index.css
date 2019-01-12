@@ -27,7 +27,7 @@ button:hover{
 
 .homepage-navbar li {
     margin: 0;
-    padding: 0 0px 0 0px;
+    padding: 0 0 0 0;
 }
 
 .homepage-navbar a {
@@ -41,6 +41,7 @@ button:hover{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .homepage-navbar a:hover {color:#ffffff }
+
 .login-container {
     display: flex;
     justify-content: flex-start;

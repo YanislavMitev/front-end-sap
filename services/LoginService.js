@@ -7,5 +7,5 @@ function authenticate() {
         password: password
     };
 
-    alert(user);
+    alert(user.email + "/n" + user.password);
 }
