@@ -1,0 +1,28 @@
+.all {
+    margin-left: 15px;
+    margin-right: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    /*box-sizing: border-box;*/
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.image {
+    height: 300px;
+    width: 100%;
+}
