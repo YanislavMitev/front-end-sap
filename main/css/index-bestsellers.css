@@ -1,9 +1,8 @@
 .all {
-    margin-left: 15px;
-    margin-right: 10px;
     display:flex;
     justify-content: space-between;
     align-content: center;
+    width:100%;
 }
 
 /* Create three equal columns that floats next to each other */
@@ -24,4 +23,16 @@
 .image {
     height: 300px;
     width: 100%;
+}
+.bestsellers h2{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #e4baff;
+}
+.bestsellers p {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #e4baff;
+}
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #e4baff;
 }
