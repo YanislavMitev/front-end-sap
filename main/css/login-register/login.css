@@ -54,12 +54,6 @@
     to {transform: scale(1)}
 }
 
-/*form {*/
-    /*display: flex;*/
-    /*justify-content: flex-start;*/
-    /*!*border: 3px solid #f1f1f1;*!*/
-/*}*/
-
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -119,4 +113,65 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+.login {
+    display: none;
+}
+
+.login-successful {
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    width: 40%;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    border-radius: 5px;
+
+    -webkit-animation-duration: 4s;animation-duration: 4s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+.login-successful p {
+    color: #3c763d;
+    font-weight: normal;
+    font-size: large;
+}
+
+.unsuccessful-login {
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    width: 40%;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    border-radius: 5px;
+
+    -webkit-animation-duration: 4s;animation-duration: 4s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+.unsuccessful-login p{
+    color: #a94442;
+    font-weight: normal;
+    font-size: large;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
 }

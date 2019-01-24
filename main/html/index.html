@@ -11,18 +11,31 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+    <script src="../../services/UserRepository.js"></script>
     <script src="../../services/LoginService.js"></script>
     <script src="../../services/RegisterService.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
+    <script src="../../services/Utils.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 </head>
 <body>
-
 <header>
-    <div id="nav-placeholder"></div>
+    <nav class="homepage-navbar">
+        <ul>
+            <li><a href="index.html">LiquidFlavour</a></li>
+            <li><a href="./pages/products.html" >Products</a></li>
+            <li><a href="./pages/about.html" >About</a></li>
+            <li><a href="./pages/location.html">Location</a></li>
+            <li>
+                <div class="login-container">
+                    <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
+                    <button id="register" type="button" onclick="openPopup('register-form')">Register</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
 </header>
-
 <main>
+    <div id="after-login-info" class="login"></div>
     <div class="bestsellers" style=" background: rgba(255, 255, 255, 0.1); padding:10px">
         <h2>HIGH-QUALITY EJUICE AND VAPE JUICE</h2>
         <p >VistaVapors is your one-stop-shop destination for all of the best eJuice and vape juice options on the market
@@ -39,40 +52,43 @@
             around with our Mix Your Own Laboratory to come up with something completely custom that fits your taste
             buds and your budget right down to the ground!</p>
     </div>
-    <h1>BESTSELLERS</h1>
-    <div class="row all">
-        <div class="column">
-            <img id="myImg1"
-                 class="image modal-content"
-                 src="../../resources/hometown-hero-stormy-50ml-vape-juice-p4716-7921_image.jpg"
-                 onmouseover="openPopupProduct(id)">
+    <section class="bestsellers">
+        <h1>BESTSELLERS</h1>
+        <div class="row all">
+            <div class="column">
+                <img id="myImg1"
+                     class="image modal-content"
+                     src="../../resources/hometown-hero-stormy-50ml-vape-juice-p4716-7921_image.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/images.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="myImg3"
+                     class="image modal-content"
+                     src="../../resources/ultimo_flavors_image.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
         </div>
-        <div class="column">
-            <img id="myImg2"
-                 class="image modal-content"
-                 src="../../resources/images.jpg"
-                 onmouseover="openPopupProduct(id)">
-        </div>
-        <div class="column">
-            <img id="myImg3"
-                 class="image modal-content"
-                 src="../../resources/ultimo_flavors_image.jpg"
-                 onmouseover="openPopupProduct(id)">
-        </div>
-    </div>
+    </section>
 
     <!-- Login -->
-    <div id="login-form" class="modal" onclick="outsideModalClick(id)">
-
+    <div id="login-form" class="modal" onclick="outsideModalClick(id)" onsubmit=" return authenticate(db)">
         <form class="modal-content animate" action="index.html" method="post">
             <div class="cancel-button-container">
+                <h1>Login</h1>
+
                 <label for="uname"><b>Email</b></label>
                 <input id="email-login" type="text" placeholder="Enter Email" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input id="password-login" type="password" placeholder="Enter Password" name="psw" required>
 
-                <button type="submit" onclick="authenticate()">Login</button>
+                <button type="submit">Login</button>
             </div>
 
             <div class="cancel-button-container" style="background-color:#f1f1f1">
@@ -82,7 +98,6 @@
     </div>
     <!-- Register-->
     <div id="register-form" class="modal" onclick="outsideModalClick(id)" >
-
         <form class="modal-content animate" action="index.html" method="post">
             <div class="cancel-button-container">
                 <h1>Register</h1>
@@ -107,6 +122,9 @@
 
     <div id="myModal" class="modal" onclick="outsideModalClick(id)">
 
+        <!-- The Close Button -->
+        <span class="close" onclick="closePopup('myModal')">&times;</span>
+
         <!-- Modal Content (The Image) -->
         <img class="modal-content" id="modalImg">
 
@@ -116,43 +134,17 @@
 
 </main>
 <script>
-
-    $(function(){
-        $("#nav-placeholder").load("nav-bar.html");
-    });
-
-    function openPopup(id) {
-        document.getElementById(id).style.display = "block";
-    }
-
-    function closePopup(id) {
-        document.getElementById(id).style.display = "none";
-    }
-
-    function outsideModalClick(elementId) {
-        let elementModal = document.getElementById(elementId);
-
-        window.onclick = function (event) {
-            if (event.target === elementModal) {
-                elementModal.style.display = "none";
-            }
-        };
-    }
-
-    function openPopupProduct(imageId) {
-        let modal = document.getElementById('myModal');
-
-        let img = document.getElementById(imageId);
-        let modalImg = document.getElementById('modalImg');
-        let captionText = document.getElementById('captionText');
-
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        };
-    }
-
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDMDgiw1L-JNdhMqfrXNNtVesBUOj27IF8",
+        authDomain: "liquidflavor-7f12a.firebaseapp.com",
+        databaseURL: "https://liquidflavor-7f12a.firebaseio.com",
+        projectId: "liquidflavor-7f12a",
+        storageBucket: "liquidflavor-7f12a.appspot.com",
+        messagingSenderId: "378742161031"
+    };
+    firebase.initializeApp(config);
+    var db = firebase.database();
 </script>
 </body>
 </html>
