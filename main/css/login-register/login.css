@@ -121,6 +121,7 @@ span.psw {
 
 .login-successful {
     float: right;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -142,6 +143,7 @@ span.psw {
 
 .unsuccessful-login {
     float: right;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -174,4 +176,19 @@ span.psw {
 .fadeOut {
     -webkit-animation-name: fadeOut;
     animation-name: fadeOut;
+}
+
+input:invalid {
+    background-color: #ffc1c8;
+}
+
+input:valid {
+    background-color: #a7ffc9;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+    background-color: #a7ffc9;
+    transition: background-color 5000s ease-in-out 0s;
 }

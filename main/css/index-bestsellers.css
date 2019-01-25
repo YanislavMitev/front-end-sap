@@ -22,7 +22,7 @@
 }
 
 .image {
-    height: 300px;
+    height: 130%;
     width: 100%;
     border-radius: 5px;
     cursor: pointer;
@@ -105,5 +105,6 @@
 }
 
 .bestsellers h1 {
+    text-align: center;
     padding: 0 10px;
 }

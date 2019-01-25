@@ -58,19 +58,19 @@
             <div class="column">
                 <img id="myImg1"
                      class="image modal-content"
-                     src="../../resources/hometown-hero-stormy-50ml-vape-juice-p4716-7921_image.jpg"
+                     src="../../resources/Asset%2012@3x-100.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
                 <img id="myImg2"
                      class="image modal-content"
-                     src="../../resources/images.jpg"
+                     src="../../resources/Asset%2013@3x-100.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
                 <img id="myImg3"
                      class="image modal-content"
-                     src="../../resources/ultimo_flavors_image.jpg"
+                     src="../../resources/Asset%2014@3x-100.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
         </div>
@@ -103,17 +103,17 @@
                 <h1>Register</h1>
 
                 <label for="email"><b>Email</b></label>
-                <input id="email-register" type="text" placeholder="Enter Email" name="email" required>
+                <input id="email-register" type="text" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                       placeholder="Enter Email" name="email" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input id="password-register" type="password" placeholder="Enter Password" name="psw" required>
 
                 <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input id="repassword-register" type="password" placeholder="Repeat Password" name="psw-repeat"
-                       required>
+                <input id="repassword-register" type="password" placeholder="Repeat Password" name="psw-repeat" onkeyup="comparePasswords()" required>
 
                 <div class="clearfix">
-                    <button type="submit" class="signup" onclick="register()">Register</button>
+                    <button type="button" class="signup" onclick="return register(db)">Register</button>
                     <button type="button" onclick="closePopup('register-form')" class="cancelbtn">Cancel</button>
                 </div>
             </div>
@@ -135,7 +135,7 @@
 </main>
 <script>
     // Initialize Firebase
-    var config = {
+    const config = {
         apiKey: "AIzaSyDMDgiw1L-JNdhMqfrXNNtVesBUOj27IF8",
         authDomain: "liquidflavor-7f12a.firebaseapp.com",
         databaseURL: "https://liquidflavor-7f12a.firebaseio.com",
@@ -144,7 +144,7 @@
         messagingSenderId: "378742161031"
     };
     firebase.initializeApp(config);
-    var db = firebase.database();
+    const db = firebase.database();
 </script>
 </body>
 </html>

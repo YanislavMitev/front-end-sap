@@ -11,8 +11,12 @@ class UserRepository {
         return immutableArray.concat(...this.localRepo);
     }
 
-    get registerUser() {
-        //TODO:TO BE IMPLEMENTED!!!
+    registerUser(user) {
+        if (user !== null || user !== undefined) {
+            this.localRepo.push(user);
+        } else {
+            alert("Could not save user");
+        }
     }
 
     fetchUsers(db) {

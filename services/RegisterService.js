@@ -1,28 +1,31 @@
-function register() {
-    // var path = "../resources/users.json";
-    // var userArray = JSON.parse(path);
-    // console.log(userArray);
+"use strict";
+
+// let _repo = new UserRepository();
+
+function register(db) {
     let email = document.getElementById("email-register").value;
     let password = document.getElementById("password-register").value;
     let rePassword = document.getElementById("repassword-register").value;
 
     if(!_validateEmail(email)) {
         alert("Invalid mail pattern.");
+        return false;
     }
 
     if(password !== rePassword) {
         alert("Password mismatch");
+        return false;
     }
 
-    var user = {
+    const user = {
         email: email,
+        isAdmin: false,
         password: password
     };
-    alert(user.stringify());
 
-    if(_validateEmail(email) && password === rePassword) {
-        _persist(user);
-    }
+    _repo.registerUser(user);
+
+    _persistUser(user, db)
 }
 
 function _validateEmail(email) {
@@ -30,6 +33,18 @@ function _validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-function _persist(user) {
-    alert(user.stringify());
+function comparePasswords() {
+    let password1 = document.getElementById("password-register");
+    let password2 = document.getElementById("repassword-register");
+
+    if (password1.value !== password2.value) {
+        password2.pseudoClass = "input:invalid";
+    } else {
+        password2.pseudoClass = "input:valid";
+    }
+}
+
+function _persistUser(user, db) {
+    let usersRef = db.ref().child("user" + _repo.getUsers.length).update(user)
+    // console.log(usersRef.toJSON())
 }
