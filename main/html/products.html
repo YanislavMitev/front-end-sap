@@ -2,22 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" type="text/css" href="../css/pages/products.css">
-
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
     <title>Title</title>
 </head>
 <body>
-    <header>
-        <div id="nav-placeholder"></div>
-    </header>
-<main></main>
-    <script>
-        $(function(){
-            $("#nav-placeholder").load("nav-bar.html");
-        });
-    </script>
+<nav class="homepage-navbar">
+    <ul>
+        <li><a href="index.html">LiquidFlavour</a></li>
+        <li><a href="products.html" >Products</a></li>
+        <li><a href="about.html" >About</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li>
+            <div class="login-container">
+                <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
+                <button id="register" type="button" onclick="openPopup('register-form')">Register</button>
+            </div>
+        </li>
+    </ul>
+</nav>
+<main>
+    <section class="products">
+        <div class="grid">
+            <div class="grid-item">
+                <img id="myImg1"
+                     class="image modal-content"
+                     src="../../resources/ApplePie.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/Blueberry.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg3"
+                     class="image modal-content"
+                     src="../../resources/CatalanCream.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/Cherry.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/Coffe.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/Grape.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/IrishCream.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/Mango.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="grid-item">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/Peppermint.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 </html>
