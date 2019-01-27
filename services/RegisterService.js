@@ -1,7 +1,5 @@
 "use strict";
 
-// let _repo = new UserRepository();
-
 function register(db) {
     let email = document.getElementById("email-register").value;
     let password = document.getElementById("password-register").value;
@@ -22,7 +20,6 @@ function register(db) {
         isAdmin: false,
         password: password
     };
-
     _repo.registerUser(user);
 
     _persistUser(user, db)
@@ -45,6 +42,16 @@ function comparePasswords() {
 }
 
 function _persistUser(user, db) {
-    let usersRef = db.ref().child("user" + _repo.getUsers.length).update(user)
-    // console.log(usersRef.toJSON())
+    const usersRef = _repo.fetchUsers(db);
+
+    usersRef.on("value", function(snapshot) {
+        let sourceRepo = snapshot.val();
+
+        _repo.initLocalRepo(sourceRepo);
+
+    }, function (error) {
+        console.log("Error: " + error.code);
+    });
+
+    usersRef.child("user" + (_repo.getUsers.length + 1)).update(user);
 }

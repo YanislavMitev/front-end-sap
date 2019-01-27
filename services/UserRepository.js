@@ -15,7 +15,7 @@ class UserRepository {
         if (user !== null || user !== undefined) {
             this.localRepo.push(user);
         } else {
-            throw new Error("Could not save user");
+            alert("Could not save user");
         }
     }
 
@@ -24,6 +24,7 @@ class UserRepository {
     }
 
     initLocalRepo(source) {
+        this.localRepo = [];
         for(let child in source) {
             this.localRepo.push(source[child]);
         }
