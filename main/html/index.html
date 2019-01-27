@@ -77,8 +77,8 @@
     </section>
 
     <!-- Login -->
-    <div id="login-form" class="modal" onclick="outsideModalClick(id)" onsubmit=" return authenticate(db)">
-        <form class="modal-content animate" action="index.html" method="post">
+    <div id="login-form" class="modal-login" onclick="outsideModalClick(id)" onsubmit=" return authenticate(db)">
+        <form class="modal-content-login animate" action="index.html" method="post">
             <div class="cancel-button-container">
                 <h1>Login</h1>
 
@@ -97,8 +97,8 @@
         </form>
     </div>
     <!-- Register-->
-    <div id="register-form" class="modal" onclick="outsideModalClick(id)" >
-        <form class="modal-content animate" action="index.html" method="post">
+    <div id="register-form" class="modal-login" onclick="outsideModalClick(id)" >
+        <form class="modal-content-login animate" action="index.html" method="post">
             <div class="cancel-button-container">
                 <h1>Register</h1>
 
@@ -122,16 +122,12 @@
 
     <div id="myModal" class="modal" onclick="outsideModalClick(id)">
 
-        <!-- The Close Button -->
         <span class="close" onclick="closePopup('myModal')">&times;</span>
-
-        <!-- Modal Content (The Image) -->
-        <img class="modal-content" id="modalImg">
-
-        <!-- Modal Caption (Image Text) -->
-        <div id="captionText"></div>
+        <div style="display:flex;justify-content: center"  class="modal-content">
+            <img class="modal-image" id="modalImg">
+            <p>egjonwngogbigwrbfebkewbuifebu</p>
+        </div>
     </div>
-
 </main>
 <script>
     // Initialize Firebase
