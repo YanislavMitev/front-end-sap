@@ -15,7 +15,7 @@ class UserRepository {
         if (user !== null || user !== undefined) {
             this.localRepo.push(user);
         } else {
-            alert("Could not save user");
+            throw new Error("Could not save user");
         }
     }
 
