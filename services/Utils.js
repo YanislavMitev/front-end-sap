@@ -10,15 +10,14 @@ function closePopup(id) {
 
 function openPopupProduct(imageId) {
     let modal = document.getElementById('myModal');
-
     let img = document.getElementById(imageId);
-    let modalImg = document.getElementById('modalImg');
-    let captionText = document.getElementById('captionText');
-
     img.onclick = function(){
         modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+        var newstring =this.src;
+        newstring= newstring.replace("1","2");
+        modalImg.src = newstring;
+        console.log(this.alt);
+        document.getElementById("popuptext").innerHTML= this.alt;
     };
 }
 

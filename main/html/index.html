@@ -16,6 +16,7 @@
     <script src="../../services/RegisterService.js"></script>
     <script src="../../services/Utils.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <link rel="shortcut icon" href="../../resources/favicon.ico">
 </head>
 <body>
 <header>
@@ -58,18 +59,21 @@
             <div class="column">
                 <img id="Mango"
                      class="image modal-content"
+                     alt="Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango.Mango mango mango mango mango."
                      src="../../resources/Mango1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
                 <img id="Blueberry"
                      class="image modal-content"
+                     alt="Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries.Blueberry words about Blueberries."
                      src="../../resources/Blueberry1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
                 <img id="ApplePie"
                      class="image modal-content"
+                     alt="Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text.Apple Pie text."
                      src="../../resources/ApplePie1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
@@ -79,21 +83,24 @@
         <h1 style=" padding:10px;margin:0">NEW ARRIVALS</h1>
         <div class="row all" style=" background: rgba(0,0,0, 0.3)">
             <div class="column">
-                <img id="myImg4"
+                <img id="Peppermint"
                      class="image modal-content"
+                     alt="Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint.Peppermint text about Peppermint."
                      src="../../resources/Peppermint1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
-                <img id="myImg5"
+                <img id="CatalanCream"
                      class="image modal-content"
                      src="../../resources/CatalanCream1.jpg"
+                     alt="Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other.Catalan Cream text like no other."
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
-                <img id="myImg6"
+                <img id="Cherry"
                      class="image modal-content"
                      src="../../resources/Cherry1.jpg"
+                     alt="Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry.Unique text about Cherry."
                      onmouseover="openPopupProduct(id)">
             </div>
         </div>
@@ -151,18 +158,11 @@
         <!-- The Close Button -->
         <span class="close" onclick="closePopup('myModal')">&times;</span>
         <section class="modal-content">
-            <article style="width:1000px; height:400px;">
+            <article style="width:700px; height:280px;">
                 <img class="modal-image" id="modalImg">
             </article>
-            <article class="bestsellers-pop-up">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue nulla a ex facilisis imperdiet
-                    in in odio. Nam nec faucibus lectus. Donec urna ante, sodales vitae eros vitae, vestibulum
-                    vestibulum nulla. Mauris condimentum congue placerat. Pellentesque vel quam lacinia, laoreet magna
-                    nec, facilisis ante. Quisque id purus massa. Aenean eu congue diam. Aenean vehicula, augue vitae
-                    consequat porttitor, ante augue placerat tortor, sed lobortis magna massa eget risus. Nullam
-                    fermentum purus ac nisl pellentesque, in fermentum mi sodales. Mauris tempus blandit ex, in rhoncus
-                    dui semper quis. Mauris eget pharetra libero. Morbi commodo felis odio, eu elementum mi faucibus in.
-                    Pellentesque accumsan scelerisque fringilla.</p>
+            <article class="bestsellers-pop-up" style="width:700px;">
+                <p id="popuptext"></p>
             </article>
         </section>
     </div>
