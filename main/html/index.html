@@ -22,8 +22,8 @@
         <nav class="homepage-navbar">
         <ul>
             <li><a href="index.html">LiquidFlavour</a></li>
-            <li><a href="products.html" >Products</a></li>
-            <li><a href="about.html" >About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="location.html">Location</a></li>
             <li>
                 <div class="login-container">
@@ -38,7 +38,7 @@
     <div id="after-login-info" class="login"></div>
     <div class="bestsellers" style=" background: rgba(0,0,0, 0.3); padding:10px">
         <h2>HIGH-QUALITY EJUICE AND VAPE JUICE</h2>
-        <p >VistaVapors is your one-stop-shop destination for all of the best eJuice and vape juice options on the market
+        <p>VistaVapors is your one-stop-shop destination for all of the best eJuice and vape juice options on the market
             today. Our catalog is full of the most flavorful e Juice, e Liquid, and vape juice options at amazing
             prices. There’s absolutely zero reason to settle for anything less than the best!
 
@@ -100,7 +100,7 @@
     </section>
 
     <!-- Login -->
-    <div id="login-form" class="modal-login" onclick="outsideModalClick(id)" onsubmit=" return authenticate(db)">
+    <div id="login-form" class="modal" onclick="outsideModalClick(id)" onsubmit="return authenticate(db)">
         <form class="modal-content-login animate" action="index.html" method="post">
             <div class="cancel-button-container">
                 <h1>Login</h1>
@@ -115,42 +115,58 @@
             </div>
 
             <div class="cancel-button-container" style="background-color:#f1f1f1">
-                <button type="button" onclick="closePopup('login-form')" class="cancelbtn">Cancel</button>
+                <button type="reset" onclick="closePopup('login-form')" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
     <!-- Register-->
-    <div id="register-form" class="modal-login" onclick="outsideModalClick(id)" >
+    <div id="register-form" class="modal-login" onclick="outsideModalClick(id)">
         <form class="modal-content-login animate" action="index.html" method="post">
             <div class="cancel-button-container">
                 <h1>Register</h1>
 
                 <label for="email"><b>Email</b></label>
-                <input id="email-register" type="text" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                <input id="email-register" type="text"
+                       pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
                        placeholder="Enter Email" name="email" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input id="password-register" type="password" placeholder="Enter Password" name="psw" required>
 
                 <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input id="repassword-register" type="password" placeholder="Repeat Password" name="psw-repeat" onkeyup="comparePasswords()" required>
+                <input id="repassword-register" type="password" placeholder="Repeat Password" name="psw-repeat"
+                       onkeyup="comparePasswords()" required>
 
                 <div class="clearfix">
-                    <button type="button" class="signup" onclick="return register(db)">Register</button>
-                    <button type="button" onclick="closePopup('register-form')" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signup" onclick="return register(db)">Register</button>
+                    <button type="reset" onclick="closePopup('register-form')" class="cancelbtn">Cancel</button>
                 </div>
             </div>
         </form>
     </div>
 
+    <!--Bestsellers-->
     <div id="myModal" class="modal" onclick="outsideModalClick(id)">
 
+        <!-- The Close Button -->
         <span class="close" onclick="closePopup('myModal')">&times;</span>
-        <div style="display:flex;justify-content: center"  class="modal-content">
-            <img class="modal-image" id="modalImg">
-            <p>egjonwngogbigwrbfebkewbuifebu</p>
-        </div>
+        <section class="modal-content">
+            <article>
+                <img class="modal-image" id="modalImg">
+            </article>
+            <article class="bestsellers-pop-up">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue nulla a ex facilisis imperdiet
+                    in in odio. Nam nec faucibus lectus. Donec urna ante, sodales vitae eros vitae, vestibulum
+                    vestibulum nulla. Mauris condimentum congue placerat. Pellentesque vel quam lacinia, laoreet magna
+                    nec, facilisis ante. Quisque id purus massa. Aenean eu congue diam. Aenean vehicula, augue vitae
+                    consequat porttitor, ante augue placerat tortor, sed lobortis magna massa eget risus. Nullam
+                    fermentum purus ac nisl pellentesque, in fermentum mi sodales. Mauris tempus blandit ex, in rhoncus
+                    dui semper quis. Mauris eget pharetra libero. Morbi commodo felis odio, eu elementum mi faucibus in.
+                    Pellentesque accumsan scelerisque fringilla.</p>
+            </article>
+        </section>
     </div>
+
 </main>
 <script>
     // Initialize Firebase

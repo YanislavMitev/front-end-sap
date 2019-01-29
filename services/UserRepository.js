@@ -24,6 +24,7 @@ class UserRepository {
     }
 
     initLocalRepo(source) {
+        this.localRepo = [];
         for(let child in source) {
             this.localRepo.push(source[child]);
         }
