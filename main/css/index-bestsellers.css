@@ -83,11 +83,15 @@
     }
 }
 */
-.bestsellers h1, h2, p {
+.bestsellers h1, h2 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #e4baff;
 }
-
+.bestsellers p{
+    padding:15px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color:#e4baff
+}
 .bestsellers h1 {
     text-align: center;
     padding: 0 10px;
