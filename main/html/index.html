@@ -19,7 +19,7 @@
 </head>
 <body>
 <header>
-    <nav class="homepage-navbar">
+        <nav class="homepage-navbar">
         <ul>
             <li><a href="index.html">LiquidFlavour</a></li>
             <li><a href="products.html" >Products</a></li>
@@ -36,7 +36,7 @@
 </header>
 <main>
     <div id="after-login-info" class="login"></div>
-    <div class="bestsellers" style=" background: rgba(255, 255, 255, 0.1); padding:10px">
+    <div class="bestsellers" style=" background: rgba(0,0,0, 0.3); padding:10px">
         <h2>HIGH-QUALITY EJUICE AND VAPE JUICE</h2>
         <p >VistaVapors is your one-stop-shop destination for all of the best eJuice and vape juice options on the market
             today. Our catalog is full of the most flavorful e Juice, e Liquid, and vape juice options at amazing
@@ -53,8 +53,8 @@
             buds and your budget right down to the ground!</p>
     </div>
     <section class="bestsellers">
-        <h1>BESTSELLERS</h1>
-        <div class="row all">
+        <h1 style="padding:10px;margin:0">BESTSELLERS</h1>
+        <div class="row all" style=" background: rgba(0,0,0, 0.3)">
             <div class="column">
                 <img id="myImg1"
                      class="image modal-content"
@@ -65,6 +65,29 @@
                 <img id="myImg2"
                      class="image modal-content"
                      src="../../resources/Blueberry.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="myImg3"
+                     class="image modal-content"
+                     src="../../resources/ApplePie.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+        </div>
+    </section>
+    <section class="bestsellers">
+        <h1 style=" padding:10px;margin:0">NEW ARRIVALS</h1>
+        <div class="row all" style=" background: rgba(0,0,0, 0.3)">
+            <div class="column">
+                <img id="myImg1"
+                     class="image modal-content"
+                     src="../../resources/Peppermint.jpg"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="myImg2"
+                     class="image modal-content"
+                     src="../../resources/CatalanCream.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">

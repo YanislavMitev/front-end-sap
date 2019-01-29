@@ -1,10 +1,10 @@
 body {
-    background-image: linear-gradient(-90deg, #140033, #660066);
+    background-image: linear-gradient(-90deg, #0E0024, #41004A);
     margin: 0 0 0 0;
 }
 
 main {
-    margin-top: 70px;
+    margin-top: 55px;
 }
 
 button:hover {
@@ -16,7 +16,7 @@ button:hover {
     position: fixed;
     top: 0;
     width: 100%;
-    background-image: linear-gradient(-90deg, #140033, #660066);
+    background-image: linear-gradient(-90deg, #0E0024, #41004A);
 }
 
 .homepage-navbar ul {
