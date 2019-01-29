@@ -6,8 +6,8 @@
 
 /* Create three equal columns that floats next to each other */
 .column {
-    width: 30%;
-    height: 30%;
+    width: auto;
+    height: auto;
     border:none;
     margin:25px;
 }
@@ -45,13 +45,7 @@
 
 /* Modal Content (Image) */
 .modal-content {
-<<<<<<< HEAD
     width: 100%;
-=======
-    display: flex;
-    margin: auto;
-    width: 80%;
->>>>>>> c33a7df1c1429016fb013b6e5d4d73a1e7b9a9b7
     max-width: 700px;
     max-height: 700px;
     border-color:transparent;

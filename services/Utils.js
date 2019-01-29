@@ -31,34 +31,3 @@ function outsideModalClick(elementId) {
         }
     };
 }
-
-function _validate(user, localRepo) {
-    let validLogin = false;
-
-    if(!user) {
-        throw new Error("Untruthy user!!!")
-    }
-
-    if(!localRepo) {
-        throw new Error("Untruthy repo!!!")
-    }
-
-    for(let child in localRepo) {
-        if(_compare(localRepo[child], user)) {
-            validLogin = true;
-        }
-    }
-    return validLogin;
-}
-
-function _compare(loginUser, userFromRepo) {
-    let comparisonValue = false;
-
-    if (loginUser.email === userFromRepo.email) {
-        if (loginUser.password === userFromRepo.password) {
-            loginUser.isAdmin = userFromRepo.isAdmin;
-            comparisonValue = true;
-        }
-    }
-    return comparisonValue;
-}

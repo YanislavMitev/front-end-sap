@@ -26,7 +26,7 @@ button:hover{
     position: fixed;
     top: 0;
     width: 100%;
-    background-image: linear-gradient(-90deg, #0E0024, #41004A);
+    background-image: linear-gradient(-90deg,#0E0024, #41004A);
 }
 .homepage-navbar ul {
     list-style-type: none;
