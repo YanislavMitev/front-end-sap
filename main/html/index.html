@@ -15,6 +15,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+    <script src="../../services/MasterRepository.js"></script>
     <script src="../../services/UserRepository.js"></script>
     <script src="../../services/LoginService.js"></script>
     <script src="../../services/RegisterService.js"></script>
@@ -30,7 +31,7 @@
             <li><a href="location.html">Location</a></li>
             <li>
                 <div class="login-container">
-                    <!--<button id="basket" type="button"><i class="material-icons">shopping_cart</i></button>-->
+                    <button id="basket" type="button" class="basket"><i class="material-icons">shopping_basket</i></button>
                     <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
                     <button id="register" type="button" onclick="openPopup('register-form')">Register</button>
                 </div>
@@ -98,7 +99,7 @@
     </section>
 
     <!-- Login -->
-    <div id="login-form" class="modal" onclick="outsideModalClick(id)" onsubmit="return authenticate(db)">
+    <div id="login-form" class="modal" onclick="outsideModalClick(id)" onsubmit="return authenticate()">
         <form class="modal-content-login animate" action="index.html" method="post">
             <div class="cancel-button-container">
                 <h1>Login</h1>
@@ -136,7 +137,7 @@
                        onkeyup="comparePasswords()" required>
 
                 <div class="clearfix">
-                    <button type="submit" class="signup" onclick="return register(db)">Register</button>
+                    <button type="submit" class="signup" onclick="return register()">Register</button>
                     <button type="reset" onclick="closePopup('register-form')" class="cancelbtn">Cancel</button>
                 </div>
             </div>
@@ -160,17 +161,11 @@
 
 </main>
 <script>
-    // Initialize Firebase
-    const config = {
-        apiKey: "AIzaSyDMDgiw1L-JNdhMqfrXNNtVesBUOj27IF8",
-        authDomain: "liquidflavor-7f12a.firebaseapp.com",
-        databaseURL: "https://liquidflavor-7f12a.firebaseio.com",
-        projectId: "liquidflavor-7f12a",
-        storageBucket: "liquidflavor-7f12a.appspot.com",
-        messagingSenderId: "378742161031"
-    };
-    firebase.initializeApp(config);
-    const db = firebase.database();
+    if (localStorage.getItem('loggedUser') === true){
+       //change navbar buttons
+    }
+    UserRepository.getInstance().initLocalRepo();
+    MasterRepository.getInstance();
 </script>
 </body>
 </html>

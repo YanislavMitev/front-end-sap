@@ -1,6 +1,10 @@
 "use strict";
 
 function openPopup(id) {
+    if (localStorage.getItem(LOGGED_USER)) {
+        logOut();
+        return false;
+    }
     document.getElementById(id).style.display = "block";
 }
 
@@ -29,4 +33,14 @@ function outsideModalClick(elementId) {
             elementModal.style.display = "none";
         }
     };
+}
+
+function validate(user, users) {
+    for (let index = 0; index < users.length; index++) {
+        if (user.email === users[index].email && user.password === users[index].password) {
+            user.isAdmin = users[index].isAdmin;
+            return true;
+        }
+    }
+    return false;
 }

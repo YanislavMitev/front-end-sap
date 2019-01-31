@@ -2,35 +2,37 @@
 
 class UserRepository {
     constructor() {
-        this.localRepo = [];
+        this._localRepo = [];
+        this.masterRepo = MasterRepository.getInstance();
+        this.usersRef = this.masterRepo.getDb().ref().child("users");
     }
 
-    get getUsers() {
-        let immutableArray = [];
+    initLocalRepo() {
+        this.usersRef.on("value", snapshot => {
+            const dataFromRemote = snapshot.val();
 
-        return immutableArray.concat(...this.localRepo);
+            for(let child in dataFromRemote) {
+               this._localRepo.push(dataFromRemote[child]);
+            }
+        })
     }
 
-    registerUser(user) {
+    addUser(user) {
         if (user !== null || user !== undefined) {
-            this.localRepo.push(user);
+            this._localRepo.push(user);
         } else {
-            alert("Could not save user");
+            alert('Cannot save user locally');
         }
     }
 
-    fetchUsers(db) {
-        return db.ref().child("users");
+    getUsers() {
+        return this._localRepo;
     }
 
-    initLocalRepo(source) {
-        this.localRepo = [];
-        for(let child in source) {
-            this.localRepo.push(source[child]);
+    static getInstance() {
+        if (!UserRepository.instance) {
+            UserRepository.instance = new UserRepository();
         }
-    }
-
-    getUser(user) {
-        //TODO:TO BE IMPLEMENTED!!!
+        return UserRepository.instance;
     }
 }
