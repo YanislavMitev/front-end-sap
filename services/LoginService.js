@@ -8,6 +8,7 @@ function authenticate() {
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-login").value;
 
+
     let user = {
         email: email,
         isAdmin: false,

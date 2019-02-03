@@ -20,7 +20,6 @@ function openPopupProduct(imageId) {
         let newstring = this.src;
         newstring= newstring.replace("1","2");
         modalImg.src = newstring;
-        console.log(this.alt);
         document.getElementById("popuptext").innerHTML= this.alt;
     };
 }

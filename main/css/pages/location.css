@@ -1,19 +1,14 @@
-.mapouter {
-    text-align: right;
-    height: 500px;
-    width: 700px;
-}
 
 .gmap_canvas {
-    overflow: hidden;
+
+    text-align: right;
     background: none !important;
-    height: 500px;
-    width: 700px;
+    height: 40%;
+    width: 60%;
 }
 body {
     background-image: linear-gradient(-90deg, #0E0024, #41004A);
     margin:0px 0 0 0;
-    overflow: hidden;
 }
 main {
     margin-top:55px;
@@ -43,42 +38,7 @@ button:hover{
     margin: 0;
     padding: 0 0px 0 0px;
 }
-
-.homepage-navbar a {
-    background-color: Transparent;
-    color: #e4baff;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
 .homepage-navbar a:hover {color:#ffffff }
-.login-container {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-    float: right;
-    margin-right: 16px;
-    color: white;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
-
-.login-container #login, #register{
-    background-color: #000000;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 10px;
-}
 .location{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #e4baff;
