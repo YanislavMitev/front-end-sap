@@ -14,30 +14,14 @@
 
 /* Modal Content/Box */
 .modal-content-login {
-    background-color: #fefefe;
+    background-color: white;
     margin: 5px auto; /* 15% from the top and centered */
-    border: 1px solid #888;
+    border: none;
     width: 40%; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color:#41004A;
 }
-
-/* The Close Button */
-.close {
-    /* Position it in the top right corner outside of the modal */
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-/* Close button on hover */
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
@@ -62,17 +46,19 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
+    color: #e4baff;
+    background: #41004A;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 3px;
 }
 
 /* Add a hover effect for buttons */
@@ -84,7 +70,8 @@ button:hover {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color:#41004A;
+    border-radius: 3px;
 }
 
 /* Center the avatar image inside this container */
@@ -96,6 +83,7 @@ button:hover {
 /* Add padding to containers */
 .cancel-button-container {
     padding: 16px;
+    border-radius: 5px;
 }
 
 /* The "Forgot password" text */
@@ -122,13 +110,12 @@ span.psw {
 .login-successful {
     float: right;
     margin-right: 10px;
-    display: flex;
+    display: center;
     justify-content: center;
     flex-direction: row;
-
-    width: 40%;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    width: 10%;
+    background-color: #41004A;
     border-radius: 5px;
 
     -webkit-animation-duration: 4s;animation-duration: 4s;
@@ -136,7 +123,7 @@ span.psw {
 }
 
 .login-successful p {
-    color: #3c763d;
+    color: #e4baff;
     font-weight: normal;
     font-size: large;
 }
@@ -148,9 +135,8 @@ span.psw {
     justify-content: center;
     flex-direction: row;
 
-    width: 40%;
-    background-color: #f2dede;
-    border-color: #ebccd1;
+    width: 10%;
+    border-color: #41004A;
     border-radius: 5px;
 
     -webkit-animation-duration: 4s;animation-duration: 4s;
@@ -158,7 +144,7 @@ span.psw {
 }
 
 .unsuccessful-login p{
-    color: #a94442;
+    color: #e4baff;
     font-weight: normal;
     font-size: large;
 }
@@ -179,11 +165,11 @@ span.psw {
 }
 
 input:invalid {
-    background-color: #ffc1c8;
+    background-color: #e4baff;
 }
 
 input:valid {
-    background-color: #a7ffc9;
+    background-color: white;
 }
 
 input:-webkit-autofill,
