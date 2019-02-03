@@ -20,7 +20,7 @@ function openPopupProduct(imageId) {
         let newstring = this.src;
         newstring= newstring.replace("1","2");
         modalImg.src = newstring;
-        document.getElementById("popuptext").innerHTML= this.alt;
+        document.getElementById("popuptext").innerHTML= products[this.id].text;
     };
 }
 
@@ -43,3 +43,23 @@ function validate(user, users) {
     }
     return false;
 }
+
+var products = {
+    "ApplePie":{text: 'ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie ApplePie '},
+    "Blueberry":{text: 'Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry Blueberry '},
+    "Bourbon":{text: 'Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon Bourbon '},
+    "Bubblegum":{text: 'Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum Bubblegum'},
+    "CatalanCream":{text: 'CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream CatalanCream '},
+    "Cherry":{text: 'Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry Cherry '},
+    "Coffee":{text: 'Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee Coffee '},
+    "Grape":{text: 'Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape Grape '},
+    "GreenApple":{text: 'GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple GreenApple '},
+    "IrishCream":{text: 'IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream IrishCream '},
+    "Kiwi":{text: 'Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi Kiwi '},
+    "Lemon":{text: 'Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon Lemon '},
+    "Mango":{text: 'Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango Mango '},
+    "Peppermint":{text: 'Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint Peppermint '},
+    "Raspberry":{text: 'Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry Raspberry '},
+    "Strawberry":{text: 'Strawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry trawberry '},
+
+};
