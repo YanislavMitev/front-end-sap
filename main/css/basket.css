@@ -11,6 +11,7 @@
 }
 
 .basket-list li {
+    display: flex;
     list-style-type: none;
 }
 
@@ -41,4 +42,21 @@
     background-color: transparent;
     width: auto;
     color: white;
+}
+
+#inner-product-info {
+    padding-right: 15px;
+}
+
+#inner-product-info li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0 5px 5px;
+}
+
+.remove-item {
+    position: relative;
+    background-color: transparent;
+    color: darkred;
+    width: 50%
 }

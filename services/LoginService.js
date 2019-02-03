@@ -1,12 +1,14 @@
 "use strict";
 
 const LOGGED_USER = 'loggedUser';
+const BASKET_CONTENT = 'items';
 
 function authenticate() {
     const repo = UserRepository.getInstance();
 
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-login").value;
+
 
     let user = {
         email: email,
@@ -47,10 +49,13 @@ function _logOn(user, users) {
 
 function logOut() {
     localStorage.removeItem(LOGGED_USER);
+    localStorage.removeItem(BASKET_CONTENT);
 
     document.getElementById("register").style.display = "block";
     document.getElementById("basket").style.display = "none";
     document.getElementById("login").innerText = "Login";
+
+    Basket.getInstance().clearBasket();
 
     location.reload();
 }

@@ -1,21 +1,22 @@
 class Basket {
 
     constructor () {
-        Basket.items = [];
+        this.items = [];
         this.total = 0;
     };
 
     addItem(item) {
         if (item !== null && item !== undefined) {
-            Basket.items.push(item);
+            this.items.push(item);
+            this.total += item.price * item.quantity;
         }
     }
 
     removeItem(item) {
         if (item !== null && item !== undefined) {
-            for (let index = 0; index < Basket.items.length; index++) {
-                if(item === Basket.items[index]) {
-                    Basket.items.splice(index, 1);
+            for (let index = 0; index < this.items.length; index++) {
+                if(item === this.items[index]) {
+                    this.items.splice(index, 1);
                     break;
                 }
             }
@@ -23,11 +24,11 @@ class Basket {
     }
 
     clearBasket() {
-        this.basket = [];
+        this.items = [];
     }
 
-    getBasket() {
-        return this.basket;
+    getItems() {
+        return this.items;
     }
 
     static getInstance() {
@@ -42,22 +43,40 @@ class Basket {
     }
 
     initBasket() {
-        if (localStorage.getItem("items")) {
-            Basket.items = JSON.parse(localStorage.getItem("items"));
+        this.items = [];
+        if (localStorage.getItem("items") && localStorage.getItem("items")[0] !== undefined) {
+            this.items = JSON.parse(localStorage.getItem("items"));
         }
 
-        if (localStorage.getItem(LOGGED_USER)) {
-            let image = document.createElement('img');
-            console.log(Basket.items.length);
-            Basket.items.forEach(item => {
+        if (localStorage.getItem(LOGGED_USER) && this.items.length > 0) {
+            this.items.forEach(item => {
+                let image = document.createElement('img');
                 image.setAttribute('src', item.url.replace('2.jpg', '1.jpg'));
                 image.setAttribute('height', '100');
                 image.setAttribute('width', '100');
-                let newListElement = document.createElement('li').appendChild(image);
+                image.style.paddingBottom = '5px';
+                image.style.paddingTop = '5px';
+
+                let newListElement = document.createElement('li');
+                newListElement.appendChild(image);
+
+                newListElement.appendChild(createInnerUl(item));
+                newListElement.appendChild(createRemoveButton());
+
                 document.getElementById('items-list').appendChild(newListElement);
                 document.getElementById('myModal').style.display = 'none';
+
+                if(this.total === 0) {
+                    this.total = 0;
+                }
+
+                this.total += item.quantity * item.price;
             });
+            document.getElementById("total").innerText = "Total: " + this.total + " lv.";
         }
     }
 
+    getTotal() {
+        return this.total;
+    }
 }

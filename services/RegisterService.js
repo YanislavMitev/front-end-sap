@@ -19,7 +19,7 @@ function register() {
         return false;
     }
 
-    const user = {
+    let user = {
         email: email,
         isAdmin: false,
         password: password
