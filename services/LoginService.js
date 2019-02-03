@@ -8,11 +8,7 @@ function authenticate() {
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-login").value;
 
-    let user = {
-        email: email,
-        isAdmin: false,
-        password: password
-    };
+    let user = new User(email, password);
 
     if (!localStorage.getItem(LOGGED_USER)) {
         if(!repo.getUsers()) {
@@ -51,4 +47,6 @@ function logOut() {
     document.getElementById("register").style.display = "block";
     document.getElementById("basket").style.display = "none";
     document.getElementById("login").innerText = "Login";
+
+    location.reload();
 }

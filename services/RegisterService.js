@@ -19,11 +19,7 @@ function register() {
         return false;
     }
 
-    const user = {
-        email: email,
-        isAdmin: false,
-        password: password
-    };
+    const user = new User(email, password);
 
     localRepo.addUser(user);
 
