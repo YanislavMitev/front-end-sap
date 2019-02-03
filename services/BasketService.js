@@ -1,7 +1,5 @@
 function addToBasket() {
-    let img = document.getElementById("modalImg");
-
-    let newImgUrl = img;
+    let newImgUrl = document.getElementById("modalImg");
     newImgUrl.src = newImgUrl.src.replace("2.jpg", "1.jpg");
 
     newImgUrl.setAttribute("height", "100");
