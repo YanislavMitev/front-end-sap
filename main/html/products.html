@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="../css/pages/products.css">
+    <link rel="stylesheet" type="text/css" href="../css/css-index.css">
+    <link rel="stylesheet" type="text/css" href="../css/index-bestsellers.css">
+    <link rel="stylesheet" type="text/css" href="../css/login-register/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/basket.css">
+
+    <script src="../../services/MasterRepository.js"></script>
+    <script src="../../services/UserRepository.js"></script>
+
+    <script src="../../services/LoginService.js"></script>
+    <script src="../../services/RegisterService.js"></script>
+    <script src="../../services/BasketService.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script src="../../services/Utils.js"></script> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
 
     <link rel="shortcut icon" href="../../resources/favicon.ico">
 
-    <title>Products</title>
+    <title>Products/LiquidFlavour</title>
 </head>
 <body>
 <nav class="homepage-navbar">
     <ul>
-        <li><a href="index.html">LiquidFlavour</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="products.html" >Products</a></li>
-        <li><a href="location.html">Location</a></li>
+        <li><a href="location.html">About</a></li>
         <li>
             <div class="login-container">
                 <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
@@ -25,65 +38,102 @@
         </li>
     </ul>
 </nav>
+<div id="myModal" class="modal" onclick="outsideModalClick(id)">
+
+    <!-- The Close Button -->
+    <span class="close" onclick="closePopup('myModal')">&times;</span>
+    <section class="modal-content">
+        <article style="width:700px; height:280px;">
+            <img class="modal-image" id="modalImg">
+        </article>
+        <article class="bestsellers-pop-up">
+            <p id="popuptext"></p>
+        </article>
+        <article>
+            <button type="button" class="purchase-button" onclick="addToBasket()">Add to basket</button>
+        </article>
+    </section>
+</div>
 <main>
-    <section class="products">
-        <div class="grid">
-            <div class="grid-item">
-                <img id="myImg1"
+    <section class="bestsellers">
+        <div class="row all" style=" background: rgba(0,0,0, 0.3)">
+            <div class="column">
+                <img id="ApplePie"
                      class="image modal-content"
+                     alt="ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie!"
                      src="../../resources/ApplePie1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+            <div class="column">
+                <img id="Blueberry"
                      class="image modal-content"
                      src="../../resources/Blueberry1.jpg"
+                     alt="Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry!"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg3"
+            <div class="column">
+                <img id="CatalanCream"
                      class="image modal-content"
                      src="../../resources/CatalanCream1.jpg"
+                     alt="Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream!"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+        </div>
+    </section>
+    <section class="bestsellers">
+        <div class="row all" style=" background: rgba(0,0,0, 0.3)">
+            <div class="column">
+                <img id="Cherry"
                      class="image modal-content"
+                     alt="Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! "
                      src="../../resources/Cherry1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+            <div class="column">
+                <img id="Coffe"
                      class="image modal-content"
                      src="../../resources/Coffe1.jpg"
+                     alt="Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe!"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+            <div class="column">
+                <img id="Grape"
                      class="image modal-content"
                      src="../../resources/Grape1.jpg"
+                     alt="Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape!"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+        </div>
+    </section>
+    <section class="bestsellers">
+        <div class="row all" style=" background: rgba(0,0,0, 0.3)">
+            <div class="column">
+                <img id="IrishCream"
                      class="image modal-content"
+                     alt="Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream!"
                      src="../../resources/IrishCream1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+            <div class="column">
+                <img id="Mango"
                      class="image modal-content"
                      src="../../resources/Mango1.jpg"
+                     alt="Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango!"
                      onmouseover="openPopupProduct(id)">
             </div>
-            <div class="grid-item">
-                <img id="myImg2"
+            <div class="column">
+                <img id="Peppermint"
                      class="image modal-content"
                      src="../../resources/Peppermint1.jpg"
+                     alt="Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!"
                      onmouseover="openPopupProduct(id)">
             </div>
         </div>
     </section>
 </main>
+<div class="footer" style="display:flex; justify-content: center;">
+        <img src="../../resources/LiquidFlavour.png" style="max-width: px; max-height:25px; display: block; padding-top: 12px;padding-right: 10px;" >
+        <p>© 2018-2019 LiquidFlavour.com | All rights reserved. </p>
+      </div>
 </body>
 </html>

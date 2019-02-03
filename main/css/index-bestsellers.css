@@ -92,7 +92,8 @@
 .bestsellers p{
     padding:15px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    color:#e4baff
+    color:#e4baff;
+    margin:0;
 }
 .bestsellers h1 {
     text-align: center;
@@ -127,4 +128,12 @@
     font-weight:bold;
     margin: 0;
     cursor: pointer;
+}
+.footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: #e4baff;
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
+   text-align: center;
 }

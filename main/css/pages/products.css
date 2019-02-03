@@ -52,38 +52,4 @@ button:hover{
     padding: 10px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
-.homepage-navbar a:hover {color:#ffffff }
-.login-container {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-    float: right;
-    margin-right: 16px;
-    color: white;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
 
-.login-container #login, #register{
-    background-color: #000000;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 10px;
-}
-.image {
-    width:19rem;
-    height:19rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    overflow:hidden;
-    border:hidden;
-    margin:10px;
-}
