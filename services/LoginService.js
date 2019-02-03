@@ -51,4 +51,6 @@ function logOut() {
     document.getElementById("register").style.display = "block";
     document.getElementById("basket").style.display = "none";
     document.getElementById("login").innerText = "Login";
+
+    location.reload();
 }
