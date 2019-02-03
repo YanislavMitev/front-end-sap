@@ -8,7 +8,16 @@ function authenticate() {
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("password-login").value;
 
+<<<<<<< HEAD
     let user = new User(email, password);
+=======
+
+    let user = {
+        email: email,
+        isAdmin: false,
+        password: password
+    };
+>>>>>>> aca8123013ede5c4f8efbb9941d3b6c882c323c8
 
     if (!localStorage.getItem(LOGGED_USER)) {
         if(!repo.getUsers()) {
