@@ -1,7 +1,7 @@
 "use strict";
 
 function openPopup(id) {
-    if (localStorage.getItem(LOGGED_USER)) {
+    if (localStorage.getItem(LOGGED_USER) && id !== 'basket-form') {
         logOut();
         return false;
     }
@@ -17,7 +17,7 @@ function openPopupProduct(imageId) {
     let img = document.getElementById(imageId);
     img.onclick = function(){
         modal.style.display = "block";
-        var newstring =this.src;
+        let newstring = this.src;
         newstring= newstring.replace("1","2");
         modalImg.src = newstring;
         console.log(this.alt);
