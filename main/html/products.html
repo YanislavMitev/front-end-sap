@@ -52,6 +52,11 @@
         <article>
             <button type="button" class="purchase-button" onclick="addToBasket()">Add to basket</button>
         </article>
+        <article class="input-quantity">
+            <button class="quantity decrement"><i class="material-icons" onclick="decrement()">remove_circle</i></button>
+            <input id="item-quantity" type="number" min="1" max="10" value="1">
+            <button class="quantity increment"><i class="material-icons" onclick="increment()">add_circle</i></button>
+        </article>
     </section>
 </div>
 <main>
@@ -60,7 +65,7 @@
             <div class="column">
                 <img id="ApplePie"
                      class="image modal-content"
-                     alt="ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie! ApplePie!"
+                     alt="ApplePie"
                      src="../../resources/ApplePie1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
@@ -68,14 +73,21 @@
                 <img id="Blueberry"
                      class="image modal-content"
                      src="../../resources/Blueberry1.jpg"
-                     alt="Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry! Blueberry!"
+                     alt="Blueberry"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
-                <img id="CatalanCream"
+                <img id="Bourbon"
                      class="image modal-content"
-                     src="../../resources/CatalanCream1.jpg"
-                     alt="Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream! Catalan Cream!"
+                     src="../../resources/Bourbon1.png"
+                     alt="Bourbon"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="Bubblegum"
+                     class="image modal-content"
+                     src="../../resources/Bubblegum1.png"
+                     alt="Bubblegum"
                      onmouseover="openPopupProduct(id)">
             </div>
         </div>
@@ -83,9 +95,16 @@
     <section class="bestsellers">
         <div class="row all" style=" background: rgba(0,0,0, 0.3)">
             <div class="column">
+                <img id="CatalanCream"
+                     class="image modal-content"
+                     src="../../resources/CatalanCream1.jpg"
+                     alt="Catalan Cream"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
                 <img id="Cherry"
                      class="image modal-content"
-                     alt="Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! Cherry! "
+                     alt="Cherry"
                      src="../../resources/Cherry1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
@@ -93,14 +112,14 @@
                 <img id="Coffe"
                      class="image modal-content"
                      src="../../resources/Coffe1.jpg"
-                     alt="Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe! Coffe!"
+                     alt="Coffee"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
                 <img id="Grape"
                      class="image modal-content"
                      src="../../resources/Grape1.jpg"
-                     alt="Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape! Grape!"
+                     alt="Grape"
                      onmouseover="openPopupProduct(id)">
             </div>
         </div>
@@ -108,32 +127,71 @@
     <section class="bestsellers">
         <div class="row all" style=" background: rgba(0,0,0, 0.3)">
             <div class="column">
+                <img id="GreenApple"
+                     class="image modal-content"
+                     alt="Green Apple"
+                     src="../../resources/GreenApple1.png"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
                 <img id="IrishCream"
                      class="image modal-content"
-                     alt="Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream! Irish Cream!"
+                     alt="Irish Cream"
                      src="../../resources/IrishCream1.jpg"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
+                <img id="Kiwi"
+                     class="image modal-content"
+                     src="../../resources/Kiwi1.png"
+                     alt="Kiwi"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="Lemon"
+                     class="image modal-content"
+                     src="../../resources/Lemon1.png"
+                     alt="Lemon"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+        </div>
+    </section>
+    <section class="bestsellers">
+        <div class="row all" style=" background: rgba(0,0,0, 0.3)">
+            <div class="column">
                 <img id="Mango"
                      class="image modal-content"
                      src="../../resources/Mango1.jpg"
-                     alt="Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango! Mango!"
+                     alt="Mango"
                      onmouseover="openPopupProduct(id)">
             </div>
             <div class="column">
                 <img id="Peppermint"
                      class="image modal-content"
                      src="../../resources/Peppermint1.jpg"
-                     alt="Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!Peppermint!"
+                     alt="Peppermint"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="Raspberry"
+                     class="image modal-content"
+                     src="../../resources/Raspberry1.png"
+                     alt="Raspberry"
+                     onmouseover="openPopupProduct(id)">
+            </div>
+            <div class="column">
+                <img id="Strawberry"
+                     class="image modal-content"
+                     src="../../resources/Strawberry1.png"
+                     alt="Strawberry"
                      onmouseover="openPopupProduct(id)">
             </div>
         </div>
     </section>
 </main>
-<div class="footer" style="display:flex; justify-content: center;">
+<footer class="footer" style="display:flex; justify-content: center;">
         <img src="../../resources/LiquidFlavour.png" style="max-width: px; max-height:25px; display: block; padding-top: 12px;padding-right: 10px;" >
         <p>© 2018-2019 LiquidFlavour.com | All rights reserved. </p>
-      </div>
+</footer>
 </body>
 </html>
