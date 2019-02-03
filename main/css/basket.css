@@ -1,0 +1,12 @@
+.basket-list {
+
+}
+
+.basket-list ul {
+    padding: 0;
+    margin: 0;
+}
+
+.basket-list li {
+    list-style-type: none;
+}
