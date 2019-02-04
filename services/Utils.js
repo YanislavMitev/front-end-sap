@@ -26,7 +26,6 @@ function openPopupProduct(imageId) {
 
 function outsideModalClick(elementId) {
     let elementModal = document.getElementById(elementId);
-
     window.onclick = function (event) {
         if (event.target === elementModal) {
             elementModal.style.display = "none";

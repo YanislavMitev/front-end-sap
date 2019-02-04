@@ -6,21 +6,6 @@ body {
 main {
     margin-top:55px;
 }
-
-header a {
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-}
-
-header hr {
-    margin-bottom: 0;
-}
-
-
-button:hover{
-    opacity: 0.8;
-}
-
 .homepage-navbar {
     overflow: hidden;
     position: fixed;
@@ -70,7 +55,7 @@ button:hover{
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 14px;
     font-weight: bold;
     border-radius: 10px;

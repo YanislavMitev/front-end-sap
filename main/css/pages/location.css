@@ -1,8 +1,5 @@
 
 .gmap_canvas {
-
-    text-align: right;
-    background: none !important;
     height: 40%;
     width: 60%;
 }
@@ -13,12 +10,6 @@ body {
 main {
     margin-top:55px;
 }
-
-row-all
-button:hover{
-    opacity: 0.8;
-}
-
 .homepage-navbar {
     overflow: hidden;
     position: fixed;
@@ -39,8 +30,50 @@ button:hover{
     padding: 0 0px 0 0px;
 }
 .homepage-navbar a:hover {color:#ffffff }
+.homepage-navbar a {
+    background-color: Transparent;
+    color: #e4baff;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 .location{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #e4baff;
 
+}
+.login-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 7px;
+    float: right;
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container #login, #register{
+    background-color: #e4baff;
+    border: none;
+    color: #0E0024;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-right:10px;
+}
+.basket {
+    padding: 0 10px;
+    margin: 0;
+    display: none;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 10px;
 }

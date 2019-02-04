@@ -44,9 +44,10 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #41004A;
     box-sizing: border-box;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
 }
 
 /* Set a style for all buttons */
@@ -165,7 +166,7 @@ span.psw {
 }
 
 input:invalid {
-    background-color: #e4baff;
+    background-color: #c4b3cc;
 }
 
 input:valid {
