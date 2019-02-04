@@ -14,12 +14,11 @@
 .input-quantity {
     display: flex;
     justify-content: center;
-    /*padding: 10px;*/
-    size: 100px;
+    size: 6.25rem;
 }
 
 .input-quantity input {
-    border-radius: 7px;
+    border-radius: 0.4375rem;
     background-color: white;
 
 }
@@ -40,14 +39,18 @@
     color: white;
 }
 
+.quantity:hover {
+    background-color: transparent;
+}
+
 #inner-product-info {
-    padding-right: 15px;
+    padding-right: 0.9375rem;
 }
 
 #inner-product-info li{
     display: flex;
     justify-content: space-between;
-    padding: 5px 0 5px 5px;
+    padding: 0.3125rem 0 0.3125rem 0.3125rem;
 }
 
 .remove-item {
@@ -55,4 +58,8 @@
     background-color: transparent;
     color: darkred;
     width: 50%
+}
+
+.remove-item:hover {
+    background-color: transparent;
 }

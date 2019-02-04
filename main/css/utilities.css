@@ -5,18 +5,18 @@
 }
 
 .column {
-    border:none;
-    margin:25px;
+    border: none;
+    margin: 1.5625rem;
 }
 
 .image {
-    border-radius: 10px;
+    border-radius: 0.625rem;
     cursor: pointer;
     transition: 0.1s;
-    overflow:hidden;
-    border-color:transparent;
-    border-width: 2px;
-    border-style:solid;
+    overflow: hidden;
+    border-color: transparent;
+    border-width: 0.125rem;
+    border-style: solid;
 }
 
 .image:hover {
@@ -24,29 +24,30 @@
     
 }
 
-
 .modal {
     display: none;
     position: fixed;
-    padding-top: 100px;
+    padding-top: 6.25rem;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
-.modal-image{
-    width: 700px;
-    height: 280px;
-    padding-bottom: 136px;
+.modal-image {
+    width: 43.75rem;
+    height: 17.5rem;
+    padding-bottom: 8.5rem;
     position: relative;
+    border-radius: 0.3125rem;
 }
 
 .modal-content {
     width: 100%;
-    max-width: 700px;
-    max-height: 700px;
+    max-width: 43.75rem;
+    max-height: 43.75rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -56,38 +57,38 @@
     color: #e4baff;
 }
 
-.bestsellers p{
-    padding:15px;
+.bestsellers p {
+    padding: 0.9375rem;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    color:#e4baff;
-    margin:0;
+    color: #e4baff;
+    margin: 0;
 }
 
 .bestsellers h1 {
     text-align: center;
-    padding: 0 10px;
-    font-size:2rem;
+    padding: 0 0.625rem;
+    font-size: 2rem;
 }
 
 .bestsellers-pop-up p {
-    margin:0;
+    margin: 0;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: #41004A;
     background-color: white;
     height: 100%;
-    max-width: 700px;
-    padding: 20px;
+    max-width: 43.75rem;
+    padding: 1.25rem;
 }
 
 .purchase-button {
     background-color: #41004A;
     border: none;
     color: #e4baff;
-    padding: 15px 32px;
+    padding: 0.9375rem 2rem;
     text-align: center;
-    display:block;
-    font-size: 16px;
-    font-weight:bold;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
     margin: 0;
     cursor: pointer;
 }
@@ -99,6 +100,22 @@
    font-family: "Trebuchet MS", Helvetica, sans-serif;
    text-align: center;
 }
-button:hover{
-    background-color:#26002b
+
+button:hover {
+    background-color: #26002b
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.4s;
+    animation: animatezoom 0.4s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
 }

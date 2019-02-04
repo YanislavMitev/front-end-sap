@@ -17,7 +17,7 @@ function authenticate() {
     };
 
     if (!localStorage.getItem(LOGGED_USER)) {
-        if(!repo.getUsers()) {
+        if (!repo.getUsers()) {
             repo.initLocalRepo();
         }
         _logOn(user, repo.getUsers());
@@ -43,7 +43,9 @@ function _logOn(user, users) {
         document.getElementById("login-form").style.display = "none";
         document.getElementById("after-login-info").classList.remove("login");
         document.getElementById("after-login-info").classList.add("unsuccessful-login", "fadeOut");
-        document.getElementById("after-login-info").innerHTML = '<p>Login unsuccessful</p>'
+        document.getElementById("after-login-info").innerHTML = '<p>Login unsuccessful</p>';
+
+        document.getElementById("user-login").reset();
     }
 }
 

@@ -9,22 +9,27 @@ class Basket {
         if (item !== null && item !== undefined) {
             this.items.push(item);
             this.total += item.price * item.quantity;
+            return this.items.length;
         }
     }
 
-    removeItem(item) {
-        if (item !== null && item !== undefined) {
-            for (let index = 0; index < this.items.length; index++) {
-                if(item === this.items[index]) {
-                    this.items.splice(index, 1);
-                    break;
-                }
+    removeItem(index) {
+        if (index >= 0 && this.items[index] !== undefined) {
+            if (this.items[index].quantity > 1) {
+                --this.items[index].quantity;
+                this.total -= this.items[index].price;
+                return false;
+            } else {
+                this.total -= this.items[index].price;
+                this.items.splice(index, 1);
+                return true;
             }
         }
     }
 
     clearBasket() {
         this.items = [];
+        this.total = 0;
     }
 
     getItems() {
@@ -49,34 +54,37 @@ class Basket {
         }
 
         if (localStorage.getItem(LOGGED_USER) && this.items.length > 0) {
+            let index = 1;
             this.items.forEach(item => {
                 let image = document.createElement('img');
                 image.setAttribute('src', item.url.replace('2.jpg', '1.jpg'));
                 image.setAttribute('height', '100');
                 image.setAttribute('width', '100');
-                image.style.paddingBottom = '5px';
-                image.style.paddingTop = '5px';
+                image.style.paddingBottom = '0.3125rem';
+                image.style.paddingTop = '0.3125rem';
 
                 let newListElement = document.createElement('li');
                 newListElement.appendChild(image);
+                newListElement.setAttribute('id', index.toString());
 
                 newListElement.appendChild(createInnerUl(item));
-                newListElement.appendChild(createRemoveButton());
+                newListElement.appendChild(createRemoveButton(index++));
 
                 document.getElementById('items-list').appendChild(newListElement);
                 document.getElementById('myModal').style.display = 'none';
 
-                if(this.total === 0) {
+                if (this.total === 0) {
                     this.total = 0;
                 }
 
                 this.total += item.quantity * item.price;
             });
-            document.getElementById("total").innerText = "Total: " + this.total + " lv.";
+
+            document.getElementById("total").innerText = "Total: " + this.getTotal() + " lv.";
         }
     }
 
     getTotal() {
-        return this.total;
+        return this.total >= 0 ? this.total.toFixed(2) : "0.00";
     }
 }

@@ -6,29 +6,48 @@
     
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" type="text/css" href="../css/pages/location.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../css/pages/location.css">
     <link rel="stylesheet" type="text/css" href="../css/utilities.css">
     <link rel="stylesheet" type="text/css" href="../css/login-register/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/basket.css">
+
+    <script src="../../models/Basket.js"></script>
+    <script src="../../models/Item.js"></script>
+
+    <script src="../../services/MasterRepository.js"></script>
+    <script src="../../services/UserRepository.js"></script>
+
+    <script src="../../services/LoginService.js"></script>
+    <script src="../../services/RegisterService.js"></script>
+    <script src="../../services/BasketService.js"></script>
+
+    <script src="../../services/Utils.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 </head>
 
 <body>
 <nav class="homepage-navbar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html" >Products</a></li>
-        <li><a href="location.html">About</a></li>
-        <li>
-            <div class="login-container">
-                <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
-                <button id="register" type="button" onclick="openPopup('register-form')">Register</button>
-            </div>
-        </li>
-    </ul>
+    <nav class="homepage-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="location.html">About</a></li>
+            <li>
+                <div class="login-container">
+                    <button id="basket" type="button" onclick="openPopup('basket-form')" class="basket"><i class="material-icons">shopping_basket</i></button>
+                    <button id="login" type="button" onclick="openPopup('login-form')">Login</button>
+                    <button id="register" type="button" onclick="openPopup('register-form')">Register</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
 </nav>
 <main>
+    <div id="after-login-info" class="login"></div>
     <div class="container" style="width: 100%;">
-    <div class="mapouter"  style="width: 750px; float: left;">
+    <div class="mapouter"  style="width: 46.875rem; float: left;">
     <div class="gmap_canvas">
         <iframe width="700" height="500" id="gmap_canvas"
                 src="https://maps.google.com/maps?q=%D0%B1%D1%83%D0%BB.%20%E2%80%9E%D0%94%D0%B6%D0%B5%D0%B9%D0%BC%D1%81%20%D0%91%D0%B0%D1%83%D1%87%D0%B5%D1%80%E2%80%9C%205%2C%201164%20%D0%B6.%D0%BA.%20%D0%9B%D0%BE%D0%B7%D0%B5%D0%BD%D0%B5%D1%86%2C%20%D0%A1%D0%BE%D1%84%D0%B8%D1%8F&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -36,22 +55,98 @@
         </iframe>
     </div>
     </div>
-    <div class="location"style="background: rgba(0,0,0, 0.3); padding:10px;height:480px">
+    <div class="location"style="background: rgba(0,0,0, 0.3); padding:0.625rem;height:30rem">
         <h2>Location</h2>
-        <p style="margin-right: 50px;">Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! </p>
+        <p style="margin-right: 3.125rem;">Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! Location! </p>
 
     </div>
     </div>
     <section class="bestsellers">
-            <h1 style=" padding:10px; margin:0;">About</h1>
+            <h1 style=" padding:0.625rem; margin:0;">About</h1>
             <div style=" background: rgba(0,0,0, 0.3);margin:0;">
-                <p style="padding-left:60px;padding-right:60px; ">Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! </p>
+                <p style="padding-left:3.75rem;padding-right:3.75rem; ">Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! Information! </p>
             </div> 
      </section>
+
+    <!-- Login -->
+    <div id="login-form" class="modal" onclick="outsideModalClick(id)" onsubmit="return authenticate()">
+        <form id="user-login" class="modal-content-login animate" action="location.html" method="post">
+            <div class="cancel-button-container">
+                <h1>Login</h1>
+
+                <label for="uname"><b>Email</b></label>
+                <input id="email-login" type="text" placeholder="Enter Email" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="password-login" type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit">Login</button>
+            </div>
+
+            <div class="cancel-button-container" style="background-color:#f1f1f1">
+                <button type="reset" onclick="closePopup('login-form')" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!-- Register-->
+    <div id="register-form" class="modal-login" onclick="outsideModalClick(id)">
+        <form id="user-register" class="modal-content-login animate" action="location.html" method="post">
+            <div class="cancel-button-container">
+                <h1>Register</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="email-register" type="text"
+                       pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                       placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="password-register" type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input id="repassword-register" type="password" placeholder="Repeat Password" name="psw-repeat"
+                       onkeyup="comparePasswords()" required>
+
+                <div class="clearfix">
+                    <button type="submit" class="signup" onclick="return register()">Register</button>
+                    <button type="reset" onclick="closePopup('register-form')" class="cancelbtn">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--Basket-->
+    <div id="basket-form" class="modal" onclick="outsideModalClick(id)" onsubmit="return checkout()">
+        <form class="modal-content-login animate" action="location.html" method="post">
+            <div class="cancel-button-container">
+                <h1>Basket</h1>
+                <section class="basket-list">
+                    <ul id="items-list"></ul>
+                    <p id="total">Total: </p>
+                </section>
+                <button type="submit">Purchase</button>
+            </div>
+
+            <div class="cancel-button-container" >
+                <button type="button" onclick="closePopup('basket-form')" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
     <footer class="footer" style="display:flex; justify-content: center;">
-            <img src="../../resources/LiquidFlavour.png" style="max-width: px; max-height:25px; display: block; padding-top: 12px;padding-right: 10px;" >
+            <img src="../../resources/LiquidFlavour.png" style="max-height:1.5625rem; display: block; padding-top: 0.75rem;padding-right: 0.625rem;" >
             <p>© 2018-2019 LiquidFlavour.com | All rights reserved. </p>
     </footer>
 </main>
+<script>
+    if (localStorage.getItem('loggedUser')){
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("register").style.display = "none";
+        document.getElementById("basket").style.display = "block";
+        document.getElementById("login").innerText = "Logout";
+    }
+    UserRepository.getInstance().initLocalRepo();
+    MasterRepository.getInstance();
+
+    Basket.getInstance().initBasket();
+</script>
 </body>
 </html>

@@ -5,6 +5,12 @@ function openPopup(id) {
         logOut();
         return false;
     }
+
+    let alias = 'login';
+    if (id === 'register-form') alias = "register";
+
+    document.getElementById("user-" + alias).reset();
+
     document.getElementById(id).style.display = "block";
 }
 
