@@ -63,7 +63,7 @@ button {
 }
 
 /* Add a hover effect for buttons */
-button:hover {
+.login-container button:hover {
     opacity: 0.8;
 }
 

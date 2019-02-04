@@ -99,3 +99,6 @@
    font-family: "Trebuchet MS", Helvetica, sans-serif;
    text-align: center;
 }
+button:hover{
+    background-color:#26002b
+}
