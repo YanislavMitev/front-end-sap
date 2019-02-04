@@ -114,9 +114,7 @@ span.psw {
     display: center;
     justify-content: center;
     flex-direction: row;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
     width: 10%;
-    background-color: #41004A;
     border-radius: 5px;
 
     -webkit-animation-duration: 4s;animation-duration: 4s;
@@ -127,6 +125,7 @@ span.psw {
     color: #e4baff;
     font-weight: normal;
     font-size: large;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .unsuccessful-login {
@@ -135,12 +134,10 @@ span.psw {
     display: flex;
     justify-content: center;
     flex-direction: row;
-
     width: 10%;
-    border-color: #41004A;
     border-radius: 5px;
 
-    -webkit-animation-duration: 4s;animation-duration: 4s;
+    -webkit-animation-duration: 8s;animation-duration: 8s;
     -webkit-animation-fill-mode: both;animation-fill-mode: both;
 }
 
@@ -148,6 +145,7 @@ span.psw {
     color: #e4baff;
     font-weight: normal;
     font-size: large;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 @-webkit-keyframes fadeOut {
